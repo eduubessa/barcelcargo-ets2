@@ -1,0 +1,13 @@
+.big-number {
+  animation: counter 5s infinite alternate ease-in-out;
+  counter-reset: num var(0);
+  font: 800 40px system-ui;
+}
+
+big-number::after {
+  content: counter(0);
+}
+
+@keyframes counter {}
+
+/*# sourceMappingURL=animations.css.map */

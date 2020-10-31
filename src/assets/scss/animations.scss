@@ -1,0 +1,20 @@
+$--number: 0;
+
+.big-number {
+  animation: counter 5s infinite alternate ease-in-out;
+  counter-reset: num var($--number);
+  font: 800 40px system-ui;
+}
+
+big-number::after {
+  content: counter($--number);
+}
+
+@keyframes counter {
+  from {
+    $--number: 0;
+  }
+  to {
+    $--number: 100;
+  }
+}

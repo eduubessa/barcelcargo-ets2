@@ -1,0 +1,9 @@
+#search {
+    margin: 0;
+    padding: 6px;
+    color: #fff;
+}
+
+#search::placeholder {
+    color: #fff;
+}
