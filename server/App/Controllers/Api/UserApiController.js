@@ -25,7 +25,8 @@ class UserApiController {
         User.find({}, (err, users) => {
             if (err) response.send(err);
             response.json(users);
-        }).populate('bank', '-_id -created_at -updated_at -__v').select('-_id -password -__v');
+        }).populate('bank', '-_id -created_at -updated_at -__v').select('-_id -password -__v')
+          .select('-_id -password, -__v')
     }
 
     /**

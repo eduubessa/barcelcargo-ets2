@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
 
 const Bank = new Schema({
     balance: {
-        type: Number,
+        type: String,
         required: true,
         default: 3000
     },

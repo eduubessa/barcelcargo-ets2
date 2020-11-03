@@ -9,10 +9,6 @@ const BankMovement = new Schema({
         required: true,
         ref: 'User'
     },
-    description: {
-        type: String,
-        required: true
-    },
     bank_sent: {
         type: Schema.ObjectId,
         required: true,
@@ -23,7 +19,11 @@ const BankMovement = new Schema({
         required: true,
         ref: 'Bank'
     },
-    movement: {
+    description: {
+        type: String,
+        required: true
+    },
+    move_money: {
       type: Number,
       required: true,
     },
@@ -34,6 +34,11 @@ const BankMovement = new Schema({
     created_at: {
         type: Date,
         default: Date.now
+    },
+    updated_at: {
+        type: Date,
+        default: Date.now
+
     },
     status: {
         type: String,
