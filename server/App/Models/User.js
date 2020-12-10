@@ -4,6 +4,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const User = new Schema({
+    bank: {
+        type: Schema.Types.ObjectId,
+        ref: 'Bank',
+        unique: true,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -24,10 +30,9 @@ const User = new Schema({
         min: 8,
         max: 100
     },
-    bank: {
-        type: Schema.Types.ObjectId,
-        ref: 'Bank',
-        unique: true,
+    birthday: {
+        type: Date,
+        default: Date.now,
         required: true
     },
     created_at: {

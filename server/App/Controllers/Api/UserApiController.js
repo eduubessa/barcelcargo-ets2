@@ -1,14 +1,18 @@
 'use strict';
 
-const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
 
 // Configs
-const configBank = require('../../../Config/Bank');
+const configBank = require('../../../Config/bank');
+const configMail = require('../../../Config/mail');
 
 // Models
 const User = require('../../Models/User');
 const Bank = require('../../Models/Bank');
+const Mail = require('../../Models/Mail');
+
+// Validations
+let CreateUserRequest = require('../../Validation/UserCreateRequest')
 
 class UserApiController {
 
@@ -37,58 +41,24 @@ class UserApiController {
      * @param next
      * @returns {Promise<void>}
      */
-    async create(request, response, next)
+    async create(request, response)
     {
-        let validation = [];
+        const validation = new CreateUserRequest(request).validation;
 
-        let username = await User.countDocuments({ nickname : request.body.username }, (err, users) => {
-            if (err) response.send(err);
-            return users;
-
-        });
-
-        let email = await User.countDocuments({ email : request.body.email }, (err, users) => {
-            if (err) throw response.send(err);
-            return users;
-        });
-
-        if(username > 0) {
-            validation.push({ username: 'O utilizador que introduziste já existe!'});
-        }
-
-        if(email > 0) {
-            validation.push({ email: 'O email que introduziste já está a ser usado'});
-        }
-
-        let bank = new Bank({
-            balance: configBank.bank.initialize
-        });
-
-        if(validation.length <= 0) {
-
-            bank.save(async (err, bank) => {
-                if (err) throw err;
-
-                await bcrypt.hash(request.body.password, 10, (err, password) => {
-                    if (err) throw err;
-
-                    let newUser = new User({
-                        name: request.body.name,
-                        nickname: request.body.username,
-                        password: password,
-                        email: request.body.email,
-                        bank: bank
-                    });
-
-                    newUser = newUser.save((err, user) => {
-                        if (err) throw err;
-                        console.log(user);
-                    });
-                });
-            });
-        }
+        console.log(validation);
 
         return response.json(validation);
+
+        /**
+        if(validation.length <= 0) {
+
+            let bank = new Bank({
+                balance: configBank.bank.initialize
+            });
+
+
+        }
+         **/
     }
 
     /**

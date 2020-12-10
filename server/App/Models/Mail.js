@@ -11,7 +11,7 @@ const Mail = new Schema({
         required: true
     },
     message: {
-        type: Date,
+        type: String,
         required: false
     },
     html_message: {
@@ -23,6 +23,14 @@ const Mail = new Schema({
         enum: ["pending", "sent", "failed"],
         default: "pending",
         required: true
+    },
+    created_at : {
+        type: Date,
+        default: Date.now
+    },
+    updated_at : {
+        type: Date,
+        default: Date.now
     }
 });
 

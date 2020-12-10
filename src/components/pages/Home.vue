@@ -129,21 +129,16 @@
         <section class="calendar card">
           <h1>Calendário</h1>
           <h3>Calendário com os próximos eventos</h3>
-          <div class="calendar">
-            <Calendar></Calendar>
-          </div>
         </section>
       </section>
     </div>
   </div>
 </template>
 <script>
-import BalanceTotal from '@/components/layout/partials/BalanceTotal'
-import Calendar from '@/components/layout/partials/Calendar'
+import BalanceTotal from '@/components/layout/partials/BalanceTotal';
 
 export default {
   components: {
-    Calendar,
     BalanceTotal
   },
   data() {

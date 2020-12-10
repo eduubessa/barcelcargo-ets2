@@ -6,6 +6,7 @@ import NotFoundPage from '@/components/pages/errors/NotFoundPage'
 
 // Pages Components
 import Home from '@/components/pages/Home';
+import Servers from '@/components/pages/Servers';
 import Statistics from '@/components/pages/Statistics';
 import Enterprises from '@/components/pages/Enterprises';
 
@@ -30,13 +31,18 @@ export default new Router({
         },
         {
             name: 'Enterprise',
-            path: '/enterprise',
+            path: '/enterprises',
             component: Enterprises
         },
         {
             name: 'Statistics',
             path: '/statistics',
             component: Statistics
+        },
+        {
+            name: 'Servers',
+            path: '/servers',
+            component: Servers
         },
         {
             path: '/error/404',

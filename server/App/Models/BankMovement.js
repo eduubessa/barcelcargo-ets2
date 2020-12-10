@@ -24,11 +24,11 @@ const BankMovement = new Schema({
         required: true
     },
     move_money: {
-      type: Number,
+      type: String,
       required: true,
     },
     balance_final: {
-        type: Number,
+        type: String,
         required: true
     },
     created_at: {
