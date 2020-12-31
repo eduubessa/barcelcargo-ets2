@@ -1,0 +1,42 @@
+div.input-group {
+    margin: 2vh 0;
+}
+
+div.input-group label {
+    margin: 16px 8px;
+    position: relative;
+    top: 25px;
+    width: 100%;
+    font-family: "Source Code Pro", sans-serif;
+}
+
+div.input-group input {
+    margin-bottom: 12px;
+    padding: 10px 22px;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #05c46b;
+}
+
+.form-input:focus + .input-group label {
+    color: red;
+}
+
+button {
+    cursor: pointer;
+    color: #fff;
+    padding: 12px 12px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #05c46b;
+    border: 2px solid #05c46b;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.4s ease;
+    &:hover {
+        color: #05c46b;
+        border: 2px solid #05c46b;
+        background: #fff;
+    }
+}
