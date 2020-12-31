@@ -9,9 +9,9 @@
 ### Backoffice
 
 [x] Users
-[] Authentication
+[ ] Logging
+[ ] Authentication
 [x] Permissions
 [x] Rules
-[x] Bank
-    [x] Transfer
+[x] Bank Transfer
  
