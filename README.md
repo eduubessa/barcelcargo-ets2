@@ -8,10 +8,10 @@
 
 ### Backoffice
 
-- Users
-- Authentication
-- Permissions
-- Rules
-- Bank
-    - Transfer
+[x] Users
+[] Authentication
+[x] Permissions
+[x] Rules
+[x] Bank
+    [x] Transfer
  
