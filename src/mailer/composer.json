@@ -1,0 +1,17 @@
+{
+    "name": "eduar/mailer",
+    "authors": [
+        {
+            "name": "Eduardo Bessa",
+            "email": "eduubessa@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Database\\": "Database/"
+        },
+        "files": ["App\\Helper.php"]
+    }
+}
