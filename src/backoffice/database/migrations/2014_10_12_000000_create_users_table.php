@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('birthday')->nullable();
             $table->string('api_token')->unique();
             $table->ipAddress('ip_address')->unique();
             $table->string('status')->default(UserInterface::BARCEL_USER_STATUS_NOT_ACTIVATED);

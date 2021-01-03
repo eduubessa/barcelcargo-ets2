@@ -229,29 +229,6 @@ class Database {
         return (object) $this->data;
     }
 
-    public function first()
-    {
-        try {
-
-            if(strpos($this->sql, "SELECT"))
-            {
-                $this->sql .= " ORDER BY `id` ASC LIMIT 1";
-
-                $stmt = $this->connection->prepare($this->sql);
-                $stmt->execute();
-                $stmt->setFetchMode(PDO::FETCH_OBJ);
-
-                while($object = $stmt->fetch())
-                {
-                    return $object;
-                }
-            }
-
-        }catch(\Exception $exception){
-            echo $exception->getMessage();
-        }
-    }
-
     public function count()
     {
         try {
