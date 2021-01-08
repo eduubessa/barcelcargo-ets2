@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Log;
 class BankApiController extends Controller
 {
     //
+    public function show(Request $request, $iban)
+    {
+        $bank = Bank::where('iban', $iban)
+            ->firstOrFail();
+
+        return response()->json($bank);
+    }
+
     public function transfer(TransferPostRequest $request)
     {
         $user = 1; // Temporario

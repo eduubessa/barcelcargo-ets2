@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/users', [\App\Http\Controllers\Api\UsersApiController::class, 'index']);
-Route::post('/user/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'show']);
+Route::get('/user/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'show']);
 Route::get('/roles', [\App\Http\Controllers\Api\RolesApiController::class, 'index']);
 
 
 Route::post('/bank/transfer/', [\App\Http\Controllers\Api\BankApiController::class, 'transfer'])->name('api.bank.transfer');
+
+// Temporary
+Route::get('bank/{iban}', [\App\Http\Controllers\Api\BankApiController::class, 'show'])->name('api.bank.show');

@@ -51,7 +51,7 @@ class UsersApiController extends Controller
     public function show(Request $request, $username)
     {
         //
-        $user = User::where('username', 'like', $username)->with('bank')->firstOrFail();
+        $user = User::where('username', $username)->with('bank')->firstOrFail();
 
         return response()->json($user);
     }
