@@ -27,5 +27,10 @@ Route::post('/auth/register', [\App\Http\Controllers\Api\Auth\RegisterApiControl
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//User
+Route::get('/users/resume/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'resume'])->name('users.resume');
+
+//Bank
 Route::get('/banks', [App\Http\Controllers\Views\BankController::class, 'index'])->name('views.banks');
 Route::get('/bank/transfer', [App\Http\Controllers\Views\BankController::class, 'transfer'])->name('views.bank.transfer');
