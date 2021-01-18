@@ -45,6 +45,23 @@
         <section class="employers-online card">
           <h1>Empregados Online</h1>
           <h3>Empregados da BarcelCargo em trabalho</h3>
+          <table style="width:100%" border="0">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Online</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(server, index) in servers" :key="index" @click="toProfile('eduubessa')">
+              <td v-if="server.game === 'ETS2'">{{ index+1 }}</td>
+              <td v-if="server.game === 'ETS2'">Eduardo Bessa</td>
+              <td v-if="server.online === true && server.game === 'ETS2'" class="status-success"><i class="fa fa-circle"></i></td>
+              <td v-if="server.online === false && server.game === 'ETS2'" class="status-success"><i class="fa fa-circle"></i></td>
+            </tr>
+            </tbody>
+          </table>
         </section>
       </section>
       <section class="last-works-calendar">
@@ -85,10 +102,10 @@
             </table>
           </div>
         </section>
-      </section>
-      <section class="employers-online card">
-        <h1>Empregados Online</h1>
-        <h3>Empregados da BarcelCargo em trabalho</h3>
+        <section class="employers-online card">
+          <h1>Empregados Online</h1>
+          <h3>Empregados da BarcelCargo em trabalho no ATS</h3>
+        </section>
       </section>
     </div>
   </div>
@@ -108,6 +125,9 @@ export default {
         console.log(city.realName.toLowerCase());
         return city.realName;
       });
+    },
+    toProfile : function(nickname) {
+      window.location.href = "/profile/" + nickname;
     }
   },
   mounted() {

@@ -17,7 +17,7 @@ html, body {
     padding: 0;
     margin: 0;
     width: 80px;
-    height: 100vh;
+    height: 100%;
     flex: 0 0 90px;
     background: #1B1C1E;
 }
@@ -137,6 +137,34 @@ main.main .header-page {
     width: 92.7%;
     display: flex;
     background: transparent;
+}
+
+main.main section.next-events {
+    margin: 10px auto;
+    width: 90vw;
+    height: auto;
+    grid-template-rows: auto;
+    grid-gap: 2.5rem;
+    grid-template-columns: 310px 310px 310px 310px 310px;
+    display: grid;
+}
+
+main.main section.next-events {
+    margin: 3vh auto;
+    width: 90vw;
+}
+
+main.main section.next-events article.event {
+    height: 360px;
+    background: red;
+    border-radius: 8px;
+}
+
+main.main section.events article.event .bg-image {
+    height: 180px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 table {

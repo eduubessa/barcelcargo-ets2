@@ -6,6 +6,7 @@ import NotFoundPage from '@/components/pages/errors/NotFoundPage'
 
 // Pages Components
 import Home from '@/components/pages/Home';
+import Events from '@/components/pages/Events';
 import Servers from '@/components/pages/Servers';
 import Statistics from '@/components/pages/Statistics';
 import Enterprises from '@/components/pages/Enterprises';
@@ -38,6 +39,11 @@ export default new Router({
             name: 'Statistics',
             path: '/statistics',
             component: Statistics
+        },
+        {
+            name: 'Events',
+            path: '/events',
+            component: Events
         },
         {
             name: 'Servers',

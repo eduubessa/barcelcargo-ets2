@@ -8,7 +8,7 @@
         <a href="/home" :class="{ 'active' : urlPath === 'home' || urlPath === '' }"><v-icon color="white" aria-hidden="false">home</v-icon></a>
         <a href="/statistics" :class="{ 'active' : urlPath === 'statistics' }"><v-icon color="white" aria-hidden="false">bar_chart</v-icon></a>
         <a href="/enterprises" :class="{ 'active' : urlPath === 'enterprises' }"><v-icon color="white" aria-hidden="false">apartment</v-icon></a>
-        <a href="#" :class="{ 'active' : urlPath === '#' }"><v-icon color="white" aria-hidden="false">payment</v-icon></a>
+        <a href="/events" :class="{ 'active' : urlPath === 'events' }"><v-icon color="white" aria-hidden="false">today</v-icon></a>
         <a href="#" :class="{ 'active' : urlPath === '#' }"><v-icon color="white" aria-hidden="false">attach_money</v-icon></a>
         <a href="#" :class="{ 'active' : urlPath === '#' }"><v-icon color="white" aria-hidden="false">local_shipping</v-icon></a>
         <a href="#" :class="{ 'active' : urlPath === '#' }"><v-icon color="white" aria-hidden="false">widgets</v-icon></a>

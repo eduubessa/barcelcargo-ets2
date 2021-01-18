@@ -31,7 +31,8 @@
                         :curve="false"
                         :data="[['2020-03-31', 622], ['2020-04-30', 800], ['2020-05-31', 600]]"
                         :grid="false"
-                        height="130px"></line-chart>
+                        height="130px">
+            </line-chart>
           </div>
         </div>
         <div class="card">
@@ -47,7 +48,7 @@
           </div>
         </div>
         <div class="card">
-          <BalanceTotal></BalanceTotal>
+          <Balance :total="user.bank.balance"></Balance>
         </div>
       </section>
       <section class="last-works-calendar">
@@ -68,81 +69,93 @@
               </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Empilhadores</td>
-                  <td>Paris, France</td>
-                  <td>Plymouth, United Kingdom</td>
-                  <td>Hoje, 10:30</td>
-                  <td>Hoje, 15:50</td>
-                  <td class="status-success"><i class="fa fa-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Carros</td>
-                  <td>Paris, FR</td>
-                  <td>Plymouth, UK</td>
-                  <td>Ontem, 10:30</td>
-                  <td>Ontem, 15:50</td>
-                  <td class="status-warning"><i class="fa fa-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Carros</td>
-                  <td>Paris, FR</td>
-                  <td>Plymouth, UK</td>
-                  <td>Ontem, 10:30</td>
-                  <td>Ontem, 15:50</td>
-                  <td class="status-success"><i class="fa fa-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Carros</td>
-                  <td>Paris, FR</td>
-                  <td>Plymouth, UK</td>
-                  <td>Ontem, 10:30</td>
-                  <td>Ontem, 15:50</td>
-                  <td class="status-success"><i class="fa fa-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Carros</td>
-                  <td>Paris, FR</td>
-                  <td>Plymouth, UK</td>
-                  <td>Ontem, 10:30</td>
-                  <td>Ontem, 15:50</td>
-                  <td class="status-danger"><i class="fa fa-circle"></i></td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Carros</td>
-                  <td>Paris, FR</td>
-                  <td>Plymouth, UK</td>
-                  <td>Ontem, 10:30</td>
-                  <td>Ontem, 15:50</td>
-                  <td class="status-success"><i class="fa fa-circle"></i></td>
-                </tr>
+              <tr>
+                <td>1</td>
+                <td>Empilhadores</td>
+                <td>Paris, France</td>
+                <td>Plymouth, United Kingdom</td>
+                <td>Hoje, 10:30</td>
+                <td>Hoje, 15:50</td>
+                <td class="status-success"><i class="fa fa-circle"></i></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Carros</td>
+                <td>Paris, FR</td>
+                <td>Plymouth, UK</td>
+                <td>Ontem, 10:30</td>
+                <td>Ontem, 15:50</td>
+                <td class="status-warning"><i class="fa fa-circle"></i></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Carros</td>
+                <td>Paris, FR</td>
+                <td>Plymouth, UK</td>
+                <td>Ontem, 10:30</td>
+                <td>Ontem, 15:50</td>
+                <td class="status-success"><i class="fa fa-circle"></i></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Carros</td>
+                <td>Paris, FR</td>
+                <td>Plymouth, UK</td>
+                <td>Ontem, 10:30</td>
+                <td>Ontem, 15:50</td>
+                <td class="status-success"><i class="fa fa-circle"></i></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Carros</td>
+                <td>Paris, FR</td>
+                <td>Plymouth, UK</td>
+                <td>Ontem, 10:30</td>
+                <td>Ontem, 15:50</td>
+                <td class="status-danger"><i class="fa fa-circle"></i></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Carros</td>
+                <td>Paris, FR</td>
+                <td>Plymouth, UK</td>
+                <td>Ontem, 10:30</td>
+                <td>Ontem, 15:50</td>
+                <td class="status-success"><i class="fa fa-circle"></i></td>
+              </tr>
               </tbody>
             </table>
           </div>
-        </section>
-        <section class="calendar card">
-          <h1>Calendário</h1>
-          <h3>Calendário com os próximos eventos</h3>
         </section>
       </section>
     </div>
   </div>
 </template>
 <script>
-import BalanceTotal from '@/components/layout/partials/BalanceTotal';
+import Balance from '@/components/layout/partials/Balance';
 
 export default {
   components: {
-    BalanceTotal
+    Balance
   },
   data() {
-    return {}
+    return {
+      user: []
+    }
+  },
+  mounted() {
+    this.$http.post('http://barcelcargo.code:7711/api/user/eduubessa')
+    .then((response) => {
+
+      if(response.status === 200)
+      {
+         this.user = response.data
+      }
+
+    }).catch((err) => {
+      if (err) throw err;
+
+    });
   }
 }
 </script>
