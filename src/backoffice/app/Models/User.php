@@ -17,9 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
+        'username',
         'password',
+        'ip_address',
+        'api_token'
     ];
 
     /**
@@ -61,5 +65,26 @@ class User extends Authenticatable
     public function allCargo()
     {
         return $this->hasMany(Cargo::class, 'user_id', 'id');
+    }
+
+    public function cargosOnFirstMonth()
+    {
+        return $this->hasMany(Cargo::class, 'user_id', 'id')
+            ->whereYear('created_at', '=', date('Y', strtotime('-2 months')))
+            ->whereMonth('created_at', '=', date('m', strtotime('-2 months')));
+    }
+
+    public function cargosOnSecondMonth()
+    {
+        return $this->hasMany(Cargo::class, 'user_id', 'id')
+            ->whereYear('created_at', '=', date('Y', strtotime('-1 months')))
+            ->whereMonth('created_at', '=', date('m', strtotime('-1 months')));
+    }
+
+    public function cargosOnThirdMonth()
+    {
+        return $this->hasMany(Cargo::class, 'user_id', 'id')
+            ->whereYear('created_at', '=', date('Y'))
+            ->whereMonth('created_at', '=', date('m'));
     }
 }

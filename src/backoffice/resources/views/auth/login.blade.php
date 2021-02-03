@@ -1,55 +1,73 @@
-@extends('layouts.auth')
+@extends('layouts.app')
 
-@section('aside_content')
-    <div class="container-fixed container-dark-opacity">
-        teste
-    </div>
-@endsection
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-@section('main_content')
-    <div class="container-steps">
-        <h3 class="text-left">Iniciar sessão</h3>
-        <header class="form-header">
-            <div class="avatar circle-radius"></div>
-        </header>
-        @if($next == "step-1" or !isset($next))
-            <div class="step step-first">
-                <form action="/auth/login" method="post">
-                    <div class="input-group">
-                        {{ @csrf_field() }}
-                        {{-- <label for="username">Utilizador ou E-mail</label> --}}
-                        <input type="text" id="username" name="username" class="form-input" required value="{{ isset($username) ? $username : '' }}">
-                        <a href="#">Esqueceu-se do email?</a>
-                    </div>
-                    <div class="input-group flex">
-                        <div class="forgot">
-                            <a href="{{ route('views.auth.register') }}">Criar conta</a>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                        <div class="submit">
-                            <button id="sign-in" type="submit">Seguinte</button>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
-                </form>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        @elseif($next == "step-2")
-            <div class="step step-second">
-                <form action="/auth/login" method="post">
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-input">
-                    </div>
-                </form>
-            </div>
-        @endif
+        </div>
     </div>
-@endsection
-
-@section('script')
-    let inputUsername = document.getElementById('username');
-    let inputNextStep = document.getElementById('sign-in');
-
-    if(inputUsername.value != null)
-    {
-        inputNextStep.click();
-    }
+</div>
 @endsection

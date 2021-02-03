@@ -13,24 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.home');
+
+    //User
+    Route::get('/users', [\App\Http\Controllers\Views\UsersViewController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [\App\Http\Controllers\Views\UsersViewController::class, 'create'])->name('users.create');
+    Route::get('/users/resume/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'resume'])->name('users.resume');
+    Route::get('/profile/{username}', [\App\Http\Controllers\Views\UsersViewController::class, 'show'])->name('profile.show');
+    //Bank
+    Route::get('/banks', [App\Http\Controllers\Views\BankController::class, 'index'])->name('views.banks');
+    Route::get('/bank/transfer', [App\Http\Controllers\Views\BankController::class, 'transfer'])->name('views.bank.transfer');
+    //Cargos
 });
 
-//Views authentication
-
-//Auth routes
-Route::get('/auth/login/{next?}', [\App\Http\Controllers\Views\Auth\LoginViewController::class, 'showForm'])->name('views.auth.login');
-Route::post('/auth/login', [\App\Http\Controllers\Api\Auth\LoginApiController::class, 'login'])->name('api.auth.login.post');
-Route::get('/auth/register', [\App\Http\Controllers\Views\Auth\RegisterViewController::class, 'showForm'])->name('views.auth.register');
-Route::post('/auth/register', [\App\Http\Controllers\Api\Auth\RegisterApiController::class, 'register'])->name('api.auth.register');
-
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//User
-Route::get('/users/resume/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'resume'])->name('users.resume');
-
-//Bank
-Route::get('/banks', [App\Http\Controllers\Views\BankController::class, 'index'])->name('views.banks');
-Route::get('/bank/transfer', [App\Http\Controllers\Views\BankController::class, 'transfer'])->name('views.bank.transfer');

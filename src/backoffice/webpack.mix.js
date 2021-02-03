@@ -12,6 +12,5 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/authentication.scss', 'public/css')
-    .browserSync('barcelcargo.code:7711');
+    .vue()
+    .sass('resources/sass/app.scss', 'public/css');

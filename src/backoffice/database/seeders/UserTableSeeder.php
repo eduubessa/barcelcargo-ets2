@@ -27,8 +27,8 @@ class UserTableSeeder extends Seeder
         $user->username = "developer";
         $user->email = "developer@barcelcargo.pt";
         $user->password = Hash::make("developer@2021");
+        $user->api_token = Str::random(60);
         $user->birthday = date("y-m-d");
-        $user->api_token = uniqid();
         $user->ip_address = "127.0.0.1";
         $user->save();
 
@@ -49,7 +49,7 @@ class UserTableSeeder extends Seeder
         $user->email = "administrator@barcelcargo.pt";
         $user->password = Hash::make("admin@2021");
         $user->birthday = date("y-m-d");
-        $user->api_token = uniqid();
+        $user->api_token = Str::random(60);
         $user->ip_address = "192.168.1.72";
         $user->save();
 
