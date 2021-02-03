@@ -222,5 +222,86 @@ export default {
   border-radius: 8px;
   background: rgb(27, 28, 31);
   background: linear-gradient(152deg, rgba(27, 28, 31, 1) 50%, rgba(23, 23, 26, 1) 50%);
+}.cards {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  grid-gap: 2%;
+  grid-template-columns: 30% 30% 30% 30%;
+  grid-template-rows: auto;
+  display: grid;
+}
+
+.card {
+  cursor: pointer;
+  padding: 22px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: rgb(27, 28, 31);
+  background: linear-gradient(152deg, rgba(27, 28, 31, 1) 50%, rgba(23, 23, 26, 1) 50%);
+}
+
+.card h1 {
+  font-size: 1.4em;
+  line-height: 30px;
+}
+
+.card h3 {
+  color: #5B5B5B;
+  margin-top: 5px;
+  margin-bottom: 13px;
+  font-size: 1.1em;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+.columns {
+  grid-gap: 5%;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: auto;
+  display: grid;
+}
+
+.column {
+  width: 100%;
+  height: 80px;
+}
+
+.column h4 {
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  color: #717172;
+  text-align: center;
+}
+
+.column h1 {
+  margin-top: 10px;
+  font-size: 1.6em;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}
+
+.servers {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  grid-gap: 2%;
+  grid-template-columns: 90% 30%;
+  grid-template-rows: auto;
+  display: grid;
+}
+
+.servers-list {
+  cursor: pointer;
+  padding: 12px 22px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: rgb(27, 28, 31);
+  background: linear-gradient(152deg, rgba(27, 28, 31, 1) 50%, rgba(23, 23, 26, 1) 50%);
 }
 </style>

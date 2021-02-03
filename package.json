@@ -17,11 +17,14 @@
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
+    "v-calendar": "^2.2.2",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
     "vue-chartjs": "^3.5.1",
     "vue-chartkick": "^0.6.1",
+    "vue-moment": "^4.1.0",
     "vue-router": "^3.4.7",
+    "vue-textarea-autosize": "^1.1.1",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {
