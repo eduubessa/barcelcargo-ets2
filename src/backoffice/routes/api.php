@@ -29,6 +29,10 @@ Route::patch('/users/', [\App\Http\Controllers\Api\UsersApiController::class, 'u
 
 // Events
 Route::get('/events', [\App\Http\Controllers\Api\EventsApiController::class, 'index'])->name('api.events');
+Route::post('/events', [\App\Http\Controllers\Api\EventsApiController::class, 'store'])->name('api.event.store');
 
 // Cargos
 Route::get('/cargos', [\App\Http\Controllers\API\CargosApiController::class, 'index'])->name('api.cargos');
+
+// Servers
+Route::get('/servers', [\App\Http\Controllers\Api\ServersApiController::class, 'index'])->name('api.servers');

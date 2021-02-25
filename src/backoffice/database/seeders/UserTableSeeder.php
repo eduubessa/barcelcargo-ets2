@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AccessToken;
 use App\Models\Mail;
 use App\Models\Role;
 use App\Models\User;
@@ -21,17 +22,18 @@ class UserTableSeeder extends Seeder
     {
         $role = Role::where('slug', str_replace("bc_role_", "",RoleInterface::BARCEL_ROLE_DEVELOPER))->first();
 
+        // Create developer user
         $user = new User();
         $user->role_id = $role->id;
         $user->name = "Developer";
         $user->username = "developer";
         $user->email = "developer@barcelcargo.pt";
         $user->password = Hash::make("developer@2021");
-        $user->api_token = Str::random(60);
         $user->birthday = date("y-m-d");
         $user->ip_address = "127.0.0.1";
         $user->save();
 
+        // Create developer mail
         $mail = new Mail();
         $mail->from = "noreply@barcelcargo.pt";
         $mail->to = "developer@barcelcargo.pt";
@@ -39,6 +41,13 @@ class UserTableSeeder extends Seeder
         $mail->body_text = "A instalação do backoffice foi feita com sucesso";
         $mail->body_html = "<h1>A instalação do backoffice foi feita com sucesso</h1>";
         $mail->save();
+
+        // Create access token
+        $token = new AccessToken();
+        $token->user_id = 1;
+        $token->name = "primary";
+        $token->token = Str::random('60');
+        $token->save();
 
         $role = Role::where('slug', str_replace("bc_role_", "",RoleInterface::BARCEL_ROLE_FOUNDER))->first();
 
@@ -49,7 +58,6 @@ class UserTableSeeder extends Seeder
         $user->email = "administrator@barcelcargo.pt";
         $user->password = Hash::make("admin@2021");
         $user->birthday = date("y-m-d");
-        $user->api_token = Str::random(60);
         $user->ip_address = "192.168.1.72";
         $user->save();
 

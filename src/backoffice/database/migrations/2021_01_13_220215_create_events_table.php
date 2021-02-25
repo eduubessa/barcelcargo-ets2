@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->foreignId('train_id')->nullable();
             $table->string('photo');
             $table->string('title');
