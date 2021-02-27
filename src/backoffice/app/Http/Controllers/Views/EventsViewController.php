@@ -31,6 +31,10 @@ class EventsViewController extends Controller
     public function create(Request $request)
     {
         //
+        if(!$this->middleware('auth')){
+            abort(401);
+        }
+
         return view('pages.events.create');
     }
 
