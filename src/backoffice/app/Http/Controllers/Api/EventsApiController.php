@@ -8,6 +8,7 @@ use App\Models\Event;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EventsApiController extends Controller
 {
@@ -30,13 +31,19 @@ class EventsApiController extends Controller
     {
         $user = User::where('username', auth()->user()->username)->first();
 
+        if($request->hasFile('photo')){
+            $path = $request->photo->storeAs('images', Hash::make(microtime()));
+            dd($path);
+        }
+
         $event = new Event();
         $event->user_id = $user->id;
+        $event->photo = "http://digitalcardmarketing.com/application/assets/global/img/no-photo.jpg";
         $event->train_id = 1;
         $event->title = $request->input('title');
         $event->description = $request->input('description');
         $event->body = $request->input('body');
-        $event->event_at = $request->input('datetime');
+        $event->event_at = $request->input('event_at');
         $event->slug = \Str::slug($request->input('title') . "-" . str_replace('.', '', microtime()));
         $event->save();
 
@@ -54,13 +61,12 @@ class EventsApiController extends Controller
         $event->save();
 
         return redirect()->route('views.events');
-
     }
 
     public function drop($slug)
     {
         $event = Event::where('slug', $slug)->delete();
 
-        return redirect()->route('views.route');
+        return redirect()->route('views.events');
     }
 }

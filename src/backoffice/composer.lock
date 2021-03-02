@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea746d3b0da70b1eec9533738d600105",
+    "content-hash": "9e2e5fa9ca1fbe7a79cd32d078e77151",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -891,6 +891,54 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.7.0"
             },
             "time": "2020-09-30T07:37:11+00:00"
+        },
+        {
+            "name": "ilzrv/laravel-steam-auth",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ilzrv/laravel-steam-auth.git",
+                "reference": "12b3743500b2a991b323515ba1f0d00e9c462475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ilzrv/laravel-steam-auth/zipball/12b3743500b2a991b323515ba1f0d00e9c462475",
+                "reference": "12b3743500b2a991b323515ba1f0d00e9c462475",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^7.0|^8.0",
+                "php": "^7.2|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ilzrv\\LaravelSteamAuth\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ilzrv\\LaravelSteamAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilia Lazarev",
+                    "email": "me@ilzrv.com"
+                }
+            ],
+            "description": "Steam Auth for Laravel",
+            "support": {
+                "issues": "https://github.com/ilzrv/laravel-steam-auth/issues",
+                "source": "https://github.com/ilzrv/laravel-steam-auth/tree/v2.1.0"
+            },
+            "time": "2020-12-02T04:09:51+00:00"
         },
         {
             "name": "invisnik/laravel-steam-auth",

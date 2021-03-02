@@ -11,7 +11,7 @@ class Event extends Model
 
     public function author()
     {
-        return $this->hasMany('users', 'user_id', 'id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
     public function train()

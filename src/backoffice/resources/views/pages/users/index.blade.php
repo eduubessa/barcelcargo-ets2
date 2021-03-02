@@ -3,8 +3,11 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-11">
             <div class="container bg-white py-5">
+                <div class="row mb-3">
+                    <a class="btn btn-success ml-auto mr-3" href="{{ route('views.user.create') }}">Criar user</a>
+                </div>
                 <table class="table">
                     <thead>
                     <tr>

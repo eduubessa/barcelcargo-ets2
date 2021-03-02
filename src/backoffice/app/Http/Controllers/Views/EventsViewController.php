@@ -52,9 +52,13 @@ class EventsViewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
         //
+        $event = Event::where('slug', $slug)->firstOrFail();
+
+        return view('pages.events.edit')
+            ->withEvent($event);
     }
 
     /**

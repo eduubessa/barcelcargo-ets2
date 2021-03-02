@@ -25,6 +25,11 @@ class StoreEventRequest extends FormRequest
     {
         return [
             //
+            'photo' => [
+                'image',
+                'mimes:jpeg,png,jpg, gif,svg',
+                'max:2048'
+            ],
             'title' => [
                 'required',
                 'max:30'

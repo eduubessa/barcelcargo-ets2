@@ -53,6 +53,12 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('views.users') }}">Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('views.events') }}">Events</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('profile.show', auth()->user()->username) }}">{{ __('Profile') }}</a>
                             </li>
                             <li class="nav-item dropdown">
