@@ -17,7 +17,7 @@ class EventsViewController extends Controller
     public function index()
     {
         //
-        $events = Event::paginate(50);
+        $events = Event::paginate(10);
 
         return view('pages.events.index')
             ->with(['events' => $events]);

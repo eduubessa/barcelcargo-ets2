@@ -29,7 +29,8 @@
                                       <td>{{ $user->email }}</td>
                                       <td></td>
                                       <td>
-                                          <button class="btn btn-success">Ver</button>
+                                          <a class="btn btn-success">Ver</a>
+                                          <a class="btn btn-warning" href="{{ route('views.users.edit', $user->username) }}">Editar</a>
                                       </td>
                                 </tr>
                             @endforeach

@@ -41,6 +41,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="row">
+                    {{ $events->links() }}
+                </div>
             </div>
         </div>
     </div>

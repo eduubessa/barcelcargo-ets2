@@ -25,6 +25,7 @@ class EventFactory extends Factory
     {
         return [
             //
+            'user_id' => 1,
             'photo' => $this->faker->imageUrl('1920', '1280'),
             'title' => $this->faker->title,
             'description' => $this->faker->realText(150),

@@ -35,4 +35,12 @@ class UsersViewController extends Controller
     {
         return view('pages.users.create');
     }
+
+    public function edit(Request $request, $username)
+    {
+        $user = User::where('username', $username)->firstOrFail();
+
+        return view('pages.users.edit')
+            ->withUser($user);
+    }
 }

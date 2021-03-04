@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86708b21-638b-4d4e-8de3-0c9edd1d516e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/events/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/mails/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/EventsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/EventsApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Views/EventsViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Views/EventsViewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Views/UsersViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Views/UsersViewController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEventRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEventRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateEventRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateEventRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EventFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EventFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/events/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/events/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/events/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/events/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" afterDir="false" />
@@ -267,6 +262,8 @@
       <workItem from="1614593969412" duration="597000" />
       <workItem from="1614601745862" duration="6042000" />
       <workItem from="1614632476360" duration="4570000" />
+      <workItem from="1614814075519" duration="394000" />
+      <workItem from="1614815026788" duration="3335000" />
     </task>
     <servers />
   </component>

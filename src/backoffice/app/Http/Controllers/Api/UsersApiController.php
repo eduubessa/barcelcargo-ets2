@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\Cargo;
 use App\Models\Role;
 use App\Models\User;
+use App\Utils\Constants\RoleInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersApiController extends Controller
 {
@@ -40,22 +43,25 @@ class UsersApiController extends Controller
         return response()->json($user);
     }
 
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        $validation = $this->validate($request, [
-            //
-            'name' => 'required|string|min:3|max:50',
-            'username' => 'required|string|min:3|max:30|unique:users',
-            'email' => 'required|email|min:3|max:100|unique:users',
-            'password' => 'required|string|min:5|max:100|confirmed'
-        ]);
+        //Fetch default role
+        $role = Role::where('slug', str_replace("bc_role_", "",RoleInterface::BARCEL_ROLE_DRIVER))->firstOrFail();
 
-        if($validation)
-        {
-            return response()->json($validation->errors());
-        }
+        // Create user
+        $user = new User();
+        $user->role_id = $role->id;
+        $user->name = $request->input('name');
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->birthday = date("y-m-d");
+        $user->ip_address = "127.0.0.1";
+        $user->save();
 
-        return "hello";
+        //Send create register email
+
+        return redirect()->route('views.users');
     }
 
 }

@@ -19,10 +19,12 @@ Route::middleware(['auth'])->group(function () {
 
     //User
     Route::get('/users', [\App\Http\Controllers\Views\UsersViewController::class, 'index'])->name('views.users');
-    Route::get('/users/create', [\App\Http\Controllers\Views\UsersViewController::class, 'create'])->name('views.user.create');
     Route::post('/users/', [\App\Http\Controllers\Api\UsersApiController::class, 'store'])->name('views.users.store');
-    Route::get('/users/resume/{username}', [\App\Http\Controllers\Api\UsersApiController::class, 'resume'])->name('users.resume');
-    Route::get('/profile/{username}', [\App\Http\Controllers\Views\UsersViewController::class, 'show'])->name('profile.show');
+    Route::get('/users/create', [\App\Http\Controllers\Views\UsersViewController::class, 'create'])->name('views.user.create');
+    Route::get('/users/{username}', [\App\Http\Controllers\Views\UsersViewController::class, 'show'])->name('profile.show');
+    Route::get('/users/{username}/edit', [\App\Http\Controllers\Views\UsersViewController::class, 'edit'])->name('views.users.edit');
+    Route::post('/users/{username}/edit', [\App\Http\Controllers\Api\UsersApiController::class, 'update'])->name('views.users.update');
+    Route::get('/users/{username}/resume', [\App\Http\Controllers\Api\UsersApiController::class, 'resume'])->name('users.resume');
 
     //Bank
     Route::get('/banks', [App\Http\Controllers\Views\BankViewController::class, 'index'])->name('views.banks');

@@ -67,6 +67,6 @@ class EventsApiController extends Controller
     {
         $event = Event::where('slug', $slug)->delete();
 
-        return redirect()->route('views.events');
+        return redirect()->route('views\.events');
     }
 }
