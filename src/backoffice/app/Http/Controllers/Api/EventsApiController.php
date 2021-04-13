@@ -22,8 +22,7 @@ class EventsApiController extends Controller
         //
         return response()->json([
             'events' => Event::limit(5)->get(),
-            'events_with_trains' => Event::with('trains')->get(),
-            'allEvents' => Event::all()
+            'next_event_with_participants' => Event::with('participants')->firstOrFail()
         ]);
     }
 

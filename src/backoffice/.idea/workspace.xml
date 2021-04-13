@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86708b21-638b-4d4e-8de3-0c9edd1d516e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/EventsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/EventsApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Views/EventsViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Views/EventsViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Views/UsersViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Views/UsersViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEventRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEventRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/EventFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EventFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utils/Constants/StatusInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utils/Constants/StatusInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/events/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/events/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontoffice" beforeDir="false" afterPath="$PROJECT_DIR$/../frontoffice" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/App/Helper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/App/Mailer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/Database/Database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mailer/mailer.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +251,12 @@
       <workItem from="1614632476360" duration="4570000" />
       <workItem from="1614814075519" duration="394000" />
       <workItem from="1614815026788" duration="3335000" />
+      <workItem from="1614869056859" duration="3514000" />
+      <workItem from="1615054603564" duration="598000" />
+      <workItem from="1615224298836" duration="7000" />
+      <workItem from="1618271903527" duration="2083000" />
+      <workItem from="1618304599097" duration="1823000" />
+      <workItem from="1618327553865" duration="597000" />
     </task>
     <servers />
   </component>

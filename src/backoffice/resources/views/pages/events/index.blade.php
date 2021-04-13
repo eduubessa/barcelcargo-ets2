@@ -33,7 +33,7 @@
                                     <td>
                                         <a class="btn btn-success" href="{{ route('views.event.show', $event->slug) }}">Ver</a>
                                         <a class="btn btn-warning" href="{{ route('views.event.edit', $event->slug) }}">Editar</a>
-                                        <a class="btn btn-danger" href="{{ route('views.event.delete', $event->slug) }}">Apagar</a>
+                                        <a class="btn btn-danger alert-confirm" onclick="if(confirm('Deseja mesmo cancelar o evento?')) href="{{ route('views.event.delete', $event->slug) }}">Apagar</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -14,8 +14,9 @@ class Event extends Model
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
-    public function train()
+    public function participants()
     {
-        return $this->hasMany('trains', 'train_id', 'id');
+        return $this->belongsToMany(User::class, 'events_users', 'id', 'participant');
     }
+
 }

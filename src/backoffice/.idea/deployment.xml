@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="ETS2 Server">
+  <component name="PublishConfigData" serverName=" Barcelcargo BackOffice">
     <serverData>
-      <paths name="ETS2 Server">
+      <paths name=" Barcelcargo BackOffice">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="backoffice.urbiwise.code">
+      <paths name="Urbiwise BackOffice">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Urbiwise FrontOffice">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

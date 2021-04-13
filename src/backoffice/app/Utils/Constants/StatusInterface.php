@@ -15,5 +15,8 @@ interface StatusInterface {
     const Status_Event_Approved = "event_approved";
     const Status_Event_Cancelled = "event_cancelled";
 
+    const Participant_Event_Approved = "participant_event_approved";
+    const Participant_Event_Rejected = "participant_event_rejected";
+    const Participant_Event_Cancelled = "participant_event_giveup";
 
 }
